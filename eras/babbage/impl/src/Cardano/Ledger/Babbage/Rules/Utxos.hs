@@ -190,7 +190,7 @@ scriptsNo = do
   sysSt <- liftSTS $ asks systemStart
   ei <- liftSTS $ asks epochInfo
 
-  let !_ = traceEvent invalidBegin ()
+  () <- pure $! traceEvent invalidBegin ()
 
   case collectTwoPhaseScriptInputs ei sysSt pp tx utxo of
     Right sLst ->
@@ -201,7 +201,7 @@ scriptsNo = do
         Fails _sss -> pure ()
     Left info -> failBecause (CollectErrors info)
 
-  let !_ = traceEvent invalidEnd ()
+  () <- pure $! traceEvent invalidEnd ()
 
       {- utxoKeep = getField @"collateral" txb ⋪ utxo -}
       {- utxoDel  = getField @"collateral" txb ◁ utxo -}
