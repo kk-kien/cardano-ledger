@@ -205,7 +205,7 @@ scriptsNo = do
 
       {- utxoKeep = getField @"collateral" txb ⋪ utxo -}
       {- utxoDel  = getField @"collateral" txb ◁ utxo -}
-      !(!utxoKeep, !utxoDel) =
+  let !(!utxoKeep, !utxoDel) =
         SplitMap.extractKeysSet (unUTxO utxo) (getField @"collateral" txb)
       UTxO collouts = Babbage.collOuts txb
       collateralFees = Val.coin (Babbage.collBalance txb utxo) -- NEW to Babbage
