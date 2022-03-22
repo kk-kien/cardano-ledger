@@ -62,7 +62,7 @@ library
                        Cardano.Crypto.Signing.Safe.PassPhrase
                        Cardano.Crypto.Signing.Safe.SafeSigner
 
-  build-depends:       aeson
+  build-depends:       aeson >= 2.0 && < 3.0
                      , base16-bytestring >= 1
                      , base64-bytestring
                      , base64-bytestring-type

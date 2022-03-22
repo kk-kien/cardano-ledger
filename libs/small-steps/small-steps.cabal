@@ -42,7 +42,7 @@ library
                      , Control.State.Transition.Simple
                      , Control.Provenance
 
-  build-depends:       aeson
+  build-depends:       aeson >= 2.0 && < 3.0
                      , base >=4.11 && <5
                      , containers
                      , data-default-class
